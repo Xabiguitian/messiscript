@@ -26,10 +26,9 @@ Este repositorio contiene:
 
 ## Miembros del equipo:
 
-- Apellido1 Apellido2, Nombre : github username : udc username : role
-- Apellido1 Apellido2, Nombre : github username : udc username : role
-- Apellido1 Apellido2, Nombre : github username : udc username : role
-
+- Fraga Pico Miguel : Fraaagaaa : miguel.fraga.pico
+- Guitian López Xabier : Xabiguitian : x.guitian
+- Gómez Osorio Pedro : pedrogomezosorio : pedro.gomez.osorio
 
 ## Pasos para realizar la práctica
 
