@@ -1,0 +1,10 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SplitWithMe\n"
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: app/i18n.py
+msgid "Welcome to SplitWithMe!"
+msgstr "¡Bienvenido a SplitWithMe!"
