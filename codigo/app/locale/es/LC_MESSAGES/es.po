@@ -8,3 +8,96 @@ msgstr ""
 #: app/i18n.py
 msgid "Welcome to SplitWithMe!"
 msgstr "¡Bienvenido a SplitWithMe!"
+
+msgid "Split - Friends"
+msgstr "Split - Amigos"
+
+msgid "Balance"
+msgstr "Saldo"
+
+msgid "View Expenses"
+msgstr "Ver Gastos"
+
+msgid "View Friends"
+msgstr "Ver Amigos"
+
+msgid "Reload"
+msgstr "Recargar"
+
+msgid "Paid by: "
+msgstr "Pagado por: "
+
+msgid "Split - Expenses"
+msgstr "Split - Gastos"
+
+msgid "Add Expense"
+msgstr "Añadir Gasto"
+
+msgid "Show Detailed List"
+msgstr "Mostrar Lista Detallada"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Amount"
+msgstr "Cantidad"
+
+msgid "Participants"
+msgstr "Participantes"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Save Changes"
+msgstr "Guardar Cambios"
+
+msgid "Error loagind expenses."
+msgstr "Error al cargar los gastos."
+
+msgid "Error loading expense details."
+msgstr "Error al cargar los detalles del gasto."
+
+msgid "Error loading friends for selection."
+msgstr "Error al cargar amigos para la selección."
+
+msgid "All values are required, including payer and participants."
+msgstr "Todos los valores son obligatorios, incluyendo el pagador y los participantes."
+
+msgid "Payer must be one of the participants."
+msgstr "El pagador debe ser uno de los participantes."
+
+msgid "Amount must be a positive number."
+msgstr "La cantidad debe ser un número positivo."
+
+msgid "Added expense successfully."
+msgstr "Gasto añadido con éxito."
+
+msgid "Error in expense data."
+msgstr "Error en los datos del gasto."
+
+msgid "Error loading expense."
+msgstr "Error al cargar el gasto."
+
+msgid "Expense updated successfully."
+msgstr "Gasto actualizado con éxito."
+
+msgid "Error updating expense."
+msgstr "Error al actualizar el gasto."
+
+msgid "Expense deleted successfully."
+msgstr "Gasto eliminado con éxito."
+
+msgid "Error deleting expense."
+msgstr "Error al eliminar el gasto."
+
+msgid "Error loading friends."
+msgstr "Error al cargar los amigos."
+
+msgid "Error loading friend details."
+msgstr "Error al cargar los detalles del amigo."
+
+msgid "Currency"
+msgstr "€"

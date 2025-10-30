@@ -7,11 +7,14 @@ from gi.repository import Gtk, Gio, Gdk
 from app.views.friends_view import FriendsView
 from app.views.expenses_view import ExpensesView
 from app.services.api_client import ApiClient
+# 1. Importar la función de traducción
+from app.i18n import _ 
 
 class MainWindow(Gtk.ApplicationWindow):
 
     def __init__(self, self_app):
-        super().__init__(application=self_app, title="Split")
+        # 2. Traducir el título de la ventana
+        super().__init__(application=self_app, title=_("Split"))
         self.set_default_size(900, 600)
 
         # --- CSS ---
@@ -35,13 +38,15 @@ class MainWindow(Gtk.ApplicationWindow):
         header_box.set_margin_end(20)
         header_box.add_css_class("header")
 
-        title_label = Gtk.Label(label="Split")
+        # 3. Traducir etiqueta del título
+        title_label = Gtk.Label(label=_("Split"))
         title_label.add_css_class("main-title")
 
-        self.friends_button = Gtk.Button(label="View Friends")
+        # 4. Traducir etiquetas de botones de navegación
+        self.friends_button = Gtk.Button(label=_("View Friends"))
         self.friends_button.add_css_class("nav-button")
         
-        self.expenses_button = Gtk.Button(label="View Expenses")
+        self.expenses_button = Gtk.Button(label=_("View Expenses"))
         self.expenses_button.add_css_class("nav-button")
 
         header_box.append(title_label)
@@ -60,8 +65,9 @@ class MainWindow(Gtk.ApplicationWindow):
         self.friends_view = FriendsView(self.api_client)
         self.expenses_view = ExpensesView(self.api_client)
 
-        self.stack.add_titled(self.friends_view, "friends", "Friends")
-        self.stack.add_titled(self.expenses_view, "expenses", "Expenses")
+        # 5. Traducir nombres de pestañas (el Gtk.Stack usa la label para los títulos)
+        self.stack.add_titled(self.friends_view, "friends", _("Friends"))
+        self.stack.add_titled(self.expenses_view, "expenses", _("Expenses"))
         self.stack.set_visible_child_name("friends")
 
         self.friends_button.connect("clicked", self.show_friends)

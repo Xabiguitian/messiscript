@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+
+"Project-Id-Version: SplitWithMe\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: app/i18n.py
+msgid "Welcome to SplitWithMe!"
+msgstr "Welcome to SplitWithMe!"
+
+msgid "Split - Friends"
+msgstr "Split - Friends"
+
+msgid "Balance"
+msgstr "Balance"
+
+msgid "View Expenses"
+msgstr "View Expenses"
+
+msgid "View Friends"
+msgstr "View Friends"
+
+msgid "Reload"
+msgstr "Reload"
+
+msgid "Paid by: "
+msgstr "Paid by: "
+
+msgid "Split - Expenses"
+msgstr "Split - Expenses"
+
+msgid "Add Expense"
+msgstr "Add Expense"
+
+msgid "Show Detailed List"
+msgstr "Show Detailed List"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Amount"
+msgstr "Amount"
+
+msgid "Participants"
+msgstr "Participants"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Save Changes"
+msgstr "Save Changes"
+
+msgid "Error loagind expenses."
+msgstr "Error loading expenses."
+
+msgid "Error loading expense details."
+msgstr "Error loading expense details."
+
+msgid "Error loading friends for selection."
+msgstr "Error loading friends for selection."
+
+msgid "All values are required, including payer and participants."
+msgstr "All values are required, including payer and participants."
+
+msgid "Payer must be one of the participants."
+msgstr "Payer must be one of the participants."
+
+msgid "Amount must be a positive number."
+msgstr "Amount must be a positive number."
+
+msgid "Added expense successfully."
+msgstr "Added expense successfully."
+
+msgid "Error in expense data."
+msgstr "Error in expense data."
+
+msgid "Error loading expense."
+msgstr "Error loading expense."
+
+msgid "Expense updated successfully."
+msgstr "Expense updated successfully."
+
+msgid "Error updating expense."
+msgstr "Error updating expense."
+
+msgid "Expense deleted successfully."
+msgstr "Expense deleted successfully."
+
+msgid "Error deleting expense."
+msgstr "Error deleting expense."
+
+msgid "Error loading friends."
+msgstr "Error loading friends."
+
+msgid "Error loading friend details."
+msgstr "Error loading friend details."
+
+msgid "Currency"
+msgstr "$"
