@@ -101,3 +101,12 @@ msgstr "Error al cargar los detalles del amigo."
 
 msgid "Currency"
 msgstr "€"
+
+msgid "No participation in any expense."
+msgstr "No participa en ningún gasto."
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "YYYY-MM-DD"
+msgstr "AAAA-MM-DD"

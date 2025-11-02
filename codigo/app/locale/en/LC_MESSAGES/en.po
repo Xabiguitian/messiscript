@@ -102,3 +102,12 @@ msgstr "Error loading friend details."
 
 msgid "Currency"
 msgstr "$"
+
+msgid "No participation in any expense."
+msgstr "No participation in any expense."
+
+msgid "Close"
+msgstr "Close"
+
+msgid "YYYY-MM-DD"
+msgstr "YYYY-MM-DD"

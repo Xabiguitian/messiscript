@@ -4,6 +4,11 @@ from gi.repository import Gtk, Gdk
 from app.presenters.expenses_presenter import ExpensesPresenter
 from gi.repository import GLib
 
+try:
+    from app.i18n import _ 
+except ImportError:
+    _ = lambda x: x
+
 class FriendCheckButton(Gtk.CheckButton):
     def __init__(self, friend_id, **kwargs):
         super().__init__(**kwargs)
@@ -105,7 +110,7 @@ class ExpensesView(Gtk.Box):
         grid = Gtk.Grid(column_spacing=10, row_spacing=10, hexpand=True)
 
         desc_entry = Gtk.Entry(placeholder_text=_("Description"), hexpand=True)
-        date_entry = Gtk.Entry(placeholder_text="YYYY-MM-DD", hexpand=True)
+        date_entry = Gtk.Entry(placeholder_text=_("YYYY-MM-DD"), hexpand=True) 
         amount_adj = Gtk.Adjustment(value=0.01, lower=0.01, upper=1000000, step_increment=0.1, page_increment=10)
         amount_entry = Gtk.SpinButton(adjustment=amount_adj, digits=2, hexpand=True)
 
@@ -165,7 +170,7 @@ class ExpensesView(Gtk.Box):
             except ValueError:
                 self.show_error(_("Error in expense data."))
             except Exception as e:
-                self.show_error(_(f"Unexpected error while preparing data: {e}"))
+                self.show_error(_("Unexpected error while preparing data: %s") % str(e))
 
         elif response_id == Gtk.ResponseType.CANCEL:
             dialog.destroy()
@@ -179,9 +184,8 @@ class ExpensesView(Gtk.Box):
     def update_expenses_list(self):
         child = self.expenses_box.get_first_child()
         while child:
-            next_child = child.get_next_sibling()
             self.expenses_box.remove(child)
-            child = next_child
+            child = self.expenses_box.get_first_child()
 
         if not self._expenses_data:
             info_label = Gtk.Label(label=_("No expenses to show."), margin_top=20, margin_bottom=20)
@@ -258,7 +262,7 @@ class ExpensesView(Gtk.Box):
         payer_id_str = str(self.selected_expense.get("payer_id", "0"))
         payer_combo.set_active_id(payer_id_str)
         if payer_combo.get_active_id() != payer_id_str and payer_id_str != "0":
-            print(_(f"WARN: Could not activate payer with ID {payer_id_str}"))
+            print(_("WARN: Could not activate payer with ID %s") % payer_id_str)
             payer_combo.set_active(0)
 
         grid.attach(Gtk.Label(label=_("Paid by: "), halign=Gtk.Align.START), 0, 3, 1, 1)
@@ -326,7 +330,7 @@ class ExpensesView(Gtk.Box):
             except ValueError:
                 self.show_error(_("Error in expense data."))
             except Exception as e:
-                self.show_error(_(f"Unexpected error while preparing data: {e}"))
+                self.show_error(_("Unexpected error while preparing data: %s") % str(e))
 
         elif response_id == Gtk.ResponseType.CANCEL:
             dialog.destroy()
@@ -425,8 +429,3 @@ class ExpensesView(Gtk.Box):
         )
         dialog.connect("response", lambda d, response_id: d.destroy())
         dialog.show()
-
-try:
-    from i18n import _
-except ImportError:
-    _ = lambda x: x

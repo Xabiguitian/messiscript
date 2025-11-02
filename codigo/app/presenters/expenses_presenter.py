@@ -1,5 +1,5 @@
 # Asegúrate de importar ApiClient, threading y GLib
-# from app.services.api_client import ApiClient
+from app.services.api_client import ApiClient
 import threading
 from gi.repository import GLib
 

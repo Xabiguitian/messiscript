@@ -4,6 +4,11 @@ from gi.repository import Gtk, Gdk
 from app.presenters.friends_presenter import FriendsPresenter
 from gi.repository import GLib
 
+try:
+    from app.i18n import _
+except ImportError:
+    _ = lambda x: x
+
 class FriendsView(Gtk.Box):
     def __init__(self, api_client):
         super().__init__(orientation=Gtk.Orientation.VERTICAL, spacing=15,
@@ -64,6 +69,7 @@ class FriendsView(Gtk.Box):
             info_label = Gtk.Label(label=_("No friends to show."), margin_top=20, margin_bottom=20)
             self.friends_box.append(info_label)
         else:
+            currency = _("Currency") 
             for friend in self._friends_data:
                 friend_row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
                 friend_row.add_css_class("friend-row")
@@ -77,7 +83,8 @@ class FriendsView(Gtk.Box):
                 credit = friend.get('credit_balance', 0)
                 debit = friend.get('debit_balance', 0)
                 net_balance = credit - debit
-                balance_info = f"{_('Balance')}: {net_balance:+.2f}€"
+                
+                balance_info = f"{_('Balance')}: {net_balance:+.2f}{currency}" 
                 balance_label = Gtk.Label(label=balance_info, halign=Gtk.Align.END)
 
                 expense_btn = Gtk.Button(label=_("View Expenses"))
@@ -92,7 +99,9 @@ class FriendsView(Gtk.Box):
     def show_friend_expenses_dialog(self, button, friend):
         friend_id = friend.get("id")
         friend_name = friend.get("name", _("Friend"))
-        dialog = Gtk.Dialog(title=f"{_('Expenses of ')}{friend_name}", transient_for=self.get_root(), modal=True)
+        
+        dialog_title = _('Expenses of ') + friend_name
+        dialog = Gtk.Dialog(title=dialog_title, transient_for=self.get_root(), modal=True)
         dialog.set_default_size(450, 350)
 
         content = dialog.get_content_area()
@@ -125,12 +134,16 @@ class FriendsView(Gtk.Box):
         if isinstance(child, Gtk.Spinner):
             expenses_box.remove(child)
 
+        currency = _("Currency") 
+        
         if expenses:
             for expense in expenses:
                 debit = expense.get('debit_balance', 0)
                 credit = expense.get('credit_balance', 0)
                 net_balance = credit - debit
-                balance_str = f"{net_balance:+.2f}€"
+                
+                balance_str = f"{net_balance:+.2f}{currency}" 
+                
                 expense_label = Gtk.Label(label=f"{expense.get('description', '')}: {balance_str}", halign=Gtk.Align.START)
                 expenses_box.append(expense_label)
         else:
@@ -141,7 +154,8 @@ class FriendsView(Gtk.Box):
         if isinstance(child, Gtk.Spinner):
             expenses_box.remove(child)
 
-        error_label = Gtk.Label(label=f"{_('Error loading expenses')}: {error_message}", halign=Gtk.Align.START, wrap=True)
+        error_text = _("Error loading expenses") + f": {error_message}"
+        error_label = Gtk.Label(label=error_text, halign=Gtk.Align.START, wrap=True)
         error_label.add_css_class("error-label")
         expenses_box.append(error_label)
 
@@ -157,8 +171,3 @@ class FriendsView(Gtk.Box):
         )
         dialog.connect("response", lambda d, response_id: d.destroy())
         dialog.show()
-
-try:
-    from i18n import _
-except ImportError:
-    _ = lambda x: x
